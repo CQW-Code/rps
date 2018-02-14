@@ -13,6 +13,8 @@ function startGame(e) {
     
     }
 }
+//completely lost on this one.  The computer response does not even show
+//up in the console log and I'm not sure why.
 
 function computerTurn()
   { 
