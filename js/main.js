@@ -1,54 +1,70 @@
-var rpsArray = [ "rock", "paper", "scissors"]
-var index =  Math.floor(Math.random()* 3)
+//here declare variables for the user, computer and result
+//for both.
+var computer;
+var user;
+var result;
+//array for choices or R P or S
+var selection = ["rock", "paper", "scissors"];
+//this part connects to the HTML- goes to the h3 id
+//Oddly when I had it as 'computer' it wouldn't work
+var userLabel = document.getElementById("user");
+var computerLabel = document.getElementById("comp");
+var winnerLabel = document.getElementById("winner");
 
-function startGame(e)
-  {
-    var choice = e.target.id
-    console.log(choice)
-   
-    //var rpsArray = [ "rock", "paper", "scissors"]
-    //var index =  Math.floor(Math.random()* 3)
-    console.log(rpsArray[index])
-    var div = document.getElementById("computer")
-    div.innerHTML = rpsArray[index]
-    winOrLose(choice, index)
-  }
- 
-
-  var choices = document.getElementsByClassName('choice')
-  for (var i in choices) {
-    try {
-      choices[i].addEventListener('click', startGame) 
-    
-       } 
-    catch(err) 
-       {
-      //First load
-        }
-      
-      }
-
-var user = choices[i]
-var puter = rpsArray[index]
-
-function winOrLose(user, puter)
-{ 
-  //need to compare user choice with computer choice to see who wins
-  //use if/else statement here...
-  // rock wins over scissors 0 --> 2
-  // paper wins over rock  2 --->  1
-  // scissors win over paper 2 ---> 1
-  // tie - done
-  
-  if (user[0] == puter[0])
-     if (user[1] == puter[1])
-       if (user[2] == puter[2])
-         console.log("A tie!")
-  else
-     console.log("who won?")
-
+//random selection for computer selection
+function computerChoice() {
+  var index = Math.floor(Math.random() * selection.length);
+  return selection[index];
 }
-  
-  
-  
-  
+
+//compare the two selections
+function comparePicks() {
+  //here set up the selections as INDEX- numeric
+  userIndex = selection.indexOf(user);
+  computerIndex = selection.indexOf(computer);
+
+  //if else statement to determine win, lose or draw
+  if (userIndex === computerIndex) {
+    result = "Tie";
+  } else if (
+    (computerIndex === selection.length - 1 && userIndex == 0) ||
+    userIndex > computerIndex
+  ) {
+    //stats[user + 'Wins']++
+    result = "Win";
+  } else {
+    result = "Lose";
+  }
+}
+
+//pass the selections and results to the HTML file
+function printResults() {
+  userLabel.innerHTML = "User: " + user;
+  computerLabel.innerHTML = "Computer: " + computer;
+  winnerLabel.innerHTML = "Result: " + result;
+  var klass = "";
+  if (result === "Win") {
+    klass = "green";
+  } else if (result == "Lose") {
+    klass = "red";
+  }
+  winnerLabel.className = klass;
+}
+
+function startGame(e) {
+  user = e.target.id;
+  //stats[user]++
+  computer = computerChoice();
+  comparePicks();
+  printResults();
+  //calcTotals();
+}
+
+var choices = document.getElementsByClassName("choice");
+for (var i in choices) {
+  try {
+    choices[i].addEventListener("click", startGame);
+  } catch (err) {
+    //First Load
+  }
+}

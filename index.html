@@ -1,26 +1,35 @@
 <DOCTYPE html>
-<html>
+  <html>
+
   <head>
-  <meta charset=utf-8 />
-    <title>Rock Paper Scissors Match Up</title>
+    <meta charset=utf-8 />
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="./css/main.css" />
+
   </head>
 
   <body>
-     <p> Pick Rock Paper or Scissors</p>
-     
-      <p>See if you can beat the computer!</p>
-      
-      <p>
-    <button id="rock" class="choice">Rock</button>
-    <button id="paper" class="choice">Paper</button>
-    <button id="scissors" class="choice">Scissors</button>
-    </p>
-    <p>Computer's Choice: </p>
-    <br>
-    <div id="computer"></div>
+    <div class='upper'>
+      <h2 class="topline"> Pick Rock Paper or Scissors</h2>
+      <h3 class='bottomline'>See if you can beat the computer!</h3>
+    </div>
 
-     <div id="winlose"></div>
+    <p>
+      <hr>
+      <button id="rock" class="choice">Rock</button>
+      <button id="paper" class="choice">Paper</button>
+      <button id="scissors" class="choice">Scissors</button>
+    </p>
+    <section class='lower' id='results'>
+      <div id="winlose">
+        <h4 id="user">User: </h4>
+        <h4 id="comp">Computer: </h4>
+        <hr />
+        <h4 id="winner">Result: </h4>
+      </div>
+    </section>
     <script src="./js/main.js"></script>
-  
+
   </body>
-</html>
+
+  </html>
