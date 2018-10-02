@@ -1,21 +1,29 @@
-#game {
-  width: 1000px;
-  margin: 200px auto;
+body {
+  background-color: darkslateblue;
 }
 
-.upper{
+#game {
+  width: 1000px;
+  margin: 75px auto;
+}
+
+.upper {
   text-align: center;
   color: darkgreen;
+  font-weight: bold;
+  background-color: burlywood;
   margin-bottom: 20px;
 }
 
-
 .lower {
-  border: solid 2px black;
+  border: solid 2px white;
+  background-color: burlywood;
+  color: darkgreen;
+  font-weight: bold;
   width: 48%;
   float: left;
   margin-top: 75px;
-  height: 150px;
+  height: 200px;
 }
 
 .clearfix:after {
@@ -44,4 +52,3 @@
 .red {
   background-color: #ee9c9c;
 }
-s
