@@ -1,10 +1,13 @@
-body {
+html body {
   background-color: darkslateblue;
+}
+html {
+  position: relative;
 }
 
 #game {
   width: 1000px;
-  margin: 75px auto;
+  margin: 50px auto;
 }
 
 .upper {
@@ -22,8 +25,8 @@ body {
   font-weight: bold;
   width: 48%;
   float: left;
-  margin-top: 75px;
-  height: 200px;
+  margin-top: 50px;
+  height: 180px;
 }
 
 .clearfix:after {
@@ -37,11 +40,11 @@ body {
 }
 
 .choice {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   float: left;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -51,4 +54,17 @@ body {
 
 .red {
   background-color: #ee9c9c;
+}
+
+.footer {
+  position: fixed;
+  background-color: darkgreen;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
 }
