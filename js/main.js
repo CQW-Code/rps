@@ -45,9 +45,12 @@ function printResults() {
   var klass = "";
   if (result === "Win") {
     klass = "green";
-  } else if (result == "Lose") {
+  }else if (result == "Lose") {
     klass = "red";
+  }else if (result == "Tie") {
+    klass = "tie"
   }
+   
   winnerLabel.className = klass;
 }
 

@@ -40,26 +40,34 @@ html {
 }
 
 .choice {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   float: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 150px;
+  margin-right: 50px;
   cursor: pointer;
 }
 
 .green {
-  background-color: #b7ee9c;
+  background-color: green;
+  color: white;
 }
 
 .red {
-  background-color: #ee9c9c;
+  background-color: red;
+  color: white;
+}
+
+.tie {
+  background-color: white;
+  color: black;
 }
 
 .footer {
   position: fixed;
-  background-color: darkgreen;
+  background-color: darkslateblue;
   color: white;
+  font-weight: bold;
   text-align: center;
   font-size: 12px;
   width: 100%;
